@@ -11,6 +11,7 @@ import {AuthModule} from "./auth/auth.module";
 import {TodosModule} from "./todos/todos.module";
 import { CoreModule } from './core/core.module';
 import { HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { HttpClientModule} from "@angular/common/http";
     SharedComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, AuthModule, TodosModule, CoreModule, HttpClientModule
+    BrowserModule, AppRoutingModule, AuthModule, TodosModule, CoreModule, HttpClientModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

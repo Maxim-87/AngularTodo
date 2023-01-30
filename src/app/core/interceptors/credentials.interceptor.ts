@@ -3,9 +3,11 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpHeaders
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {environment} from "../../../enviroments/environment";
 
 @Injectable()
 export class CredentialsInterceptor implements HttpInterceptor {
@@ -13,6 +15,10 @@ export class CredentialsInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    request = request.clone({
+      headers: new HttpHeaders().append('api-key', environment['api-key']),
+      withCredentials: true,
+    })
     return next.handle(request);
   }
 }
