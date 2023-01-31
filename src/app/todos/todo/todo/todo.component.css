@@ -1,0 +1,15 @@
+.todo {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  width: 200px;
+  padding: 5px;
+  margin: 10px;
+  border: 2px solid black;
+}
+
+.button {
+  height: 25px;
+}
