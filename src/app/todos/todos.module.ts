@@ -12,7 +12,7 @@ import {FormsModule} from "@angular/forms";
     TodoComponent
   ],
   imports: [
-    CommonModule, TodosRoutingModule
+    CommonModule, TodosRoutingModule, FormsModule
   ]
 })
 export class TodosModule { }
