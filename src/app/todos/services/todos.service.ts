@@ -48,4 +48,16 @@ export class TodosService {
       }
     )
   }
+
+  changeTodoTitle(id: string, title: string) {
+    this.http.delete<CommonResponse<{item: Todo}>>(`${environment.baseURL}/todo-lists/${id}`,).pipe(
+      map(res => {
+      const stateTodos = this.todos$.getValue()
+      return stateTodos.filter(todo => todo.id !== id)
+    })).subscribe(
+      todos => {
+          this.todos$.next(todos)
+      }
+    )
+  }
 }
