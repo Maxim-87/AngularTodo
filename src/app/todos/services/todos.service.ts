@@ -49,11 +49,17 @@ export class TodosService {
     )
   }
 
-  changeTodoTitle(id: string, title: string) {
-    this.http.delete<CommonResponse<{item: Todo}>>(`${environment.baseURL}/todo-lists/${id}`,).pipe(
-      map(res => {
+  changeTodoTitle(data: {id: string, title: string}) {
+    this.http.put<CommonResponse>(`${environment.baseURL}/todo-lists/${data.id}`, {title: data.title}).pipe(
+      map(() => {
       const stateTodos = this.todos$.getValue()
-      return stateTodos.filter(todo => todo.id !== id)
+      return stateTodos.map(todo => {
+        if(todo.id === data.id) {
+         return {...todo, title: data.title}
+        } else {
+          return todo
+        }
+      })
     })).subscribe(
       todos => {
           this.todos$.next(todos)
