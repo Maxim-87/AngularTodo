@@ -15,6 +15,7 @@ export class TodosService {
 
   constructor(private http: HttpClient) {
   }
+
   getTodos() {
     this.http.get<Todo[]>(`${environment.baseURL}/todo-lists`).subscribe(
       todos => {

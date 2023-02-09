@@ -15,6 +15,7 @@ export class TodosComponent implements OnInit{
 
   constructor(private todosService: TodosService) {
   }
+
   ngOnInit(): void {
     this.todos$ = this.todosService.todos$
     this.todosService.getTodos()
@@ -27,5 +28,9 @@ export class TodosComponent implements OnInit{
 
   deleteTodo(id: string) {
   this.todosService.deleteTodo(id)
+  }
+
+  editTodoTitle(data: {id: string, title: string}) {
+  this.todosService.changeTodoTitle(data)
   }
 }

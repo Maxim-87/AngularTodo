@@ -1,4 +1,3 @@
-<p>todos works!</p>
 <div class="todos">
   <div class="header">
     <h1>Angular todo</h1>
@@ -8,5 +7,7 @@
 </div>
   <tl-todo
     *ngFor="let todo of todos$ | async" [todo]="todo"
-    (deleteTodoEvent)="deleteTodo($event)"></tl-todo>
+    (deleteTodoEvent)="deleteTodo($event)"
+    (editTitleEvent)="editTodoTitle($event)">
+  </tl-todo>
 
