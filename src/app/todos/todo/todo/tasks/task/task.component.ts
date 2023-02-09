@@ -9,7 +9,9 @@ import {Task} from "../../../../models/tasks.models";
 export class TaskComponent implements OnInit{
    @Input() task!: Task
    @Output() deleteTaskEvent = new EventEmitter<string>()
+   @Output() changeTaskTitleEvent = new EventEmitter<string>()
 
+   isEditTask = true;
 
   constructor() {
   }
@@ -21,5 +23,16 @@ export class TaskComponent implements OnInit{
      this.deleteTaskEvent.emit(this.task.id)
   }
 
+  showEdit() {
+    this.isEditTask = !this.isEditTask;
+  }
+
+  changeTaskTitle() {
+    this.changeTaskTitleEvent.emit(this.task.id)
+  }
+
+  changeTaskStatus() {
+
+  }
 
 }

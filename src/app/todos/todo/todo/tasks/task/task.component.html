@@ -1,4 +1,11 @@
-<div class="taskBlock">
-  <p>{{task.title}}</p>
+<div class="taskBlock" >
+  <ng-template [ngIf]="isEditTask">
+    <input class="checkbox" type="checkbox" (click)="changeTaskStatus()" [checked]="task.status">
+    <p (dblclick)="showEdit()">{{task.title}}</p>
+  </ng-template>
+  <ng-template [ngIf]="!isEditTask">
+    <input type="text" placeholder="{{task.title}}" (blur)="showEdit()">
+  </ng-template>
   <button class="button" (click)="deleteTask()">delete task</button>
 </div>
+
