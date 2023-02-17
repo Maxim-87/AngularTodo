@@ -12,7 +12,7 @@ import {TodosModule} from "./todos/todos.module";
 import {CoreModule} from './core/core.module';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
-import {TasksComponent} from './tasks/tasks.component';
+import {TasksComponent} from "./todos/todo/todo/tasks/tasks.component";
 
 @NgModule({
   declarations: [
@@ -21,15 +21,12 @@ import {TasksComponent} from './tasks/tasks.component';
     CoreComponent,
     TodosComponent,
     SharedComponent,
-    TasksComponent,
-    TasksComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, AuthModule, TodosModule, CoreModule, HttpClientModule, FormsModule
   ],
   providers: [],
   exports: [
-    TasksComponent
   ],
   bootstrap: [AppComponent]
 })
