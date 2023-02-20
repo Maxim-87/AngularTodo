@@ -1,0 +1,7 @@
+.filters > button {
+  margin-left: 5px;
+}
+
+.completed {
+  background-color: #bddbfa;
+}
