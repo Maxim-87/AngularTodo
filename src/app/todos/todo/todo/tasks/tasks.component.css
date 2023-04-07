@@ -1,0 +1,15 @@
+.tasks {
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
+  margin: 10px 0;
+}
+
+.button {
+  margin-left: 10px;
+}
+
+.input {
+  margin-bottom: 15px;
+  border-radius: 5px;
+}

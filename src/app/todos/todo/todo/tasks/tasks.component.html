@@ -1,0 +1,8 @@
+<div class="tasks">
+  <input class="input" type="text" placeholder="Add new task" [(ngModel)]="taskTitle" (keydown.enter)="addTask()">
+  <tl-task *ngFor="let task of tasks$ | async"
+           [task]="task"
+           (deleteTaskEvent)="deleteTask($event)"
+           (changeTaskEvent)="changeTask($event)">
+    ></tl-task>
+</div>
