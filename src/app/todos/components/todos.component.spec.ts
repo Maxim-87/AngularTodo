@@ -40,7 +40,7 @@ describe('TodosComponent', () => {
     expect(element).toBeTruthy();
   });
 
-  it('should call onButtonClick when clicked', fakeAsync(() => {
+  it('should call createTodo when clicked', fakeAsync(() => {
     spyOn(component, 'createTodo');
 
     let button = fixture.debugElement.nativeElement.querySelector('button');
@@ -50,5 +50,11 @@ describe('TodosComponent', () => {
 
     expect(component.createTodo).toHaveBeenCalled();
   }));
+
+  it('should have <h1> with "Angular todo"', () => {
+    const element: HTMLElement = fixture.nativeElement;
+    const h1 = element.querySelector('h1')!;
+    expect(h1.textContent).toEqual('Angular todo');
+  });
 
 });
