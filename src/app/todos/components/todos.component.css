@@ -2,7 +2,35 @@
   display: flex;
   justify-content: center;
 }
-
 .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.inputBlock {
+  margin: 10px 0;
+}
+
+.button {
+  box-shadow: inset 0 1px 0 0 #dcecfb;
+  background: #bddbfa linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+  border: 1px solid #84bbf3;
+  color: #ffffff;
+  text-shadow: 0 1px 0 #528ecc;
+  border-radius: 5px;
+}
+
+.todosBlock{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.input {
+  width: 200px;
+  height: 25px;
+  border-radius: 5px;
+  background:  linear-gradient(to top left, #abffab, transparent);
+  margin: 10px 0;
 }

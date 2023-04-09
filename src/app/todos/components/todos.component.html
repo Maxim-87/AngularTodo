@@ -1,13 +1,18 @@
 <div class="todos">
   <div class="header">
     <h1>Angular todo</h1>
-    <input type="text" placeholder="add todo" [(ngModel)]="todoTitle">
-    <button (click)="createTodo()"> add todo </button>
+<!--    <div class="inputBlock">-->
+      <input class="input" type="text" placeholder="add todo" [(ngModel)]="todoTitle">
+      <button class="button" (click)="createTodo()"> add todo </button>
+<!--    </div>-->
   </div>
 </div>
+<div class="todosBlock">
   <tl-todo
     *ngFor="let todo of todos$ | async" [todo]="todo"
     (deleteTodoEvent)="deleteTodo($event)"
     (editTitleEvent)="editTodoTitle($event)">
   </tl-todo>
+</div>
+
 

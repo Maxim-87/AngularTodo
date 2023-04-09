@@ -1,15 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {TodosService} from "../services/todos.service";
 import {Observable} from "rxjs";
-import { Todo } from '../models/todos.models';
+import {DomainTodo, Todo} from '../models/todos.models';
 
 @Component({
   selector: 'tl-todos',
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css']
 })
+
 export class TodosComponent implements OnInit{
-  todos$?: Observable<Todo[]>
+  todos$?: Observable<DomainTodo[]>
 
   todoTitle = '';
 
@@ -33,4 +34,6 @@ export class TodosComponent implements OnInit{
   editTodoTitle(data: {id: string, title: string}) {
   this.todosService.changeTodoTitle(data)
   }
+
+
 }
