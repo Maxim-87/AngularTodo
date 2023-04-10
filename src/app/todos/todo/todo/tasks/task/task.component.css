@@ -1,13 +1,15 @@
-.taskBlock {
-  display: flex;
-  align-items: center;
+.task {
+  display: grid;
+  grid-template-columns: 25px auto 82px;
+  margin: 5px;
 }
 
 .button {
-  margin-left: 10px;
   height: 20px;
+  border-radius: 5px;
 }
 
 .checkbox {
   margin-right: 10px;
+  border-radius: 5px;
 }

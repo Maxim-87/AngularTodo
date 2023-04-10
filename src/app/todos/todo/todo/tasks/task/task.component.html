@@ -1,6 +1,8 @@
-<div class="taskBlock" >
+<div class="task">
   <ng-template [ngIf]="isEditTask">
-    <input class="checkbox" type="checkbox" (click)="changeTaskStatus($event)" [checked]="task.status === taskStatusEnum.completed">
+    <label>
+      <input class="checkbox" type="checkbox" (click)="changeTaskStatus($event)" [checked]="task.status === taskStatusEnum.completed">
+    </label>
     <p (dblclick)="showEdit()">{{task.title}}</p>
   </ng-template>
   <ng-template [ngIf]="!isEditTask">

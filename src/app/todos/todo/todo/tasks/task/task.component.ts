@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Task, UpdateTaskModel} from "../../../../models/tasks.models";
-import {TaskStatusEnam} from "../../../../../core/enams/taskStatus.enam";
+import {TaskStatusEnum} from "../../../../../core/enams/taskStatus.enam";
 
 @Component({
   selector: 'tl-task',
@@ -14,7 +14,7 @@ export class TaskComponent implements OnInit{
 
    isEditTask = true;
 
-   taskStatusEnum = TaskStatusEnam
+   taskStatusEnum = TaskStatusEnum
 
   newTaskTitle = ''
 
