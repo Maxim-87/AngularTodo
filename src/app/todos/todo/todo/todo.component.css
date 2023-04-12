@@ -1,24 +1,41 @@
 .todo {
   display: flex;
   flex-direction: column;
-}
-
-.todoBlock {
-  display: flex;
-  align-items: center;
+  justify-content: space-around;
+  min-height: 300px;
+  margin: 25px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background:
+    linear-gradient(#68797e, transparent),
+    linear-gradient(to top left, #abffab, transparent),
+    linear-gradient(to top right, blue, transparent);
 }
 
 .title {
+  height: 20px;
   width: 200px;
   padding: 5px;
   margin: 10px 0;
   border: 2px solid black;
+  border-radius: 5px;
+  color: #d09292;
+
 }
 
-.button {
+.buttonBlock {
+   display: flex;
+   justify-content: center;
+}
+
+.deleteButton {
   height: 25px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #d15757;
 }
 
-.button {
-  margin-left: 10px;
+.changeButton {
+  background-color: #b9bf5d;
 }

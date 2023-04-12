@@ -1,6 +1,20 @@
 <div class="todo">
-  <div class="title">
-    {{todo.title}}
+  <div>
+    <ng-template [ngIf]="!isTitleEdit">
+      <div class="title" (dblclick)="toggleEditMode()">
+        {{todo.title}}
+      </div>
+      <div class="buttonBlock">
+        <button class="deleteButton" (click)="deleteTodoHandler()"> Delete </button>
+        <button id="{{todo.id}}" class="deleteButton changeButton" (click)="changeTodoHandler()"> Change </button>
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="isTitleEdit">
+      <input class="title" type="text" placeholder="{{todo.title}}" value="{{todo.title}}" [(ngModel)]="newTitle" (blur)="editTitleHandler()" >
+      <button class="button" (click)="editTitleHandler()"> Save </button>
+    </ng-template>
   </div>
-  <button class="button" (click)="deleteTodoHandler()"> delete </button>
+  <tl-tasks [todolistId]="todo.id"></tl-tasks>
+  <tl-todo-filters (changeFilterEvent)="changeFilter($event)" [filter]="todo.filter"></tl-todo-filters>
+  <tl-todo-footer [todoAddedDate]="todo.addedDate"></tl-todo-footer>
 </div>
