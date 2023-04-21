@@ -5,12 +5,16 @@ import { TodoComponent } from './todo/todo/todo.component';
 import {FormsModule} from "@angular/forms";
 import { TasksComponent } from './todo/todo/tasks/tasks.component';
 import { TaskComponent } from './todo/todo/tasks/task/task.component';
+import { TodoFiltersComponent } from './todo/todo/todo-filters/todo-filters.component';
+import { TodoFooterComponent } from './todo/todo/todo-footer/todo-footer.component';
 
 @NgModule({
   declarations: [
     TodoComponent,
     TasksComponent,
-    TaskComponent
+    TaskComponent,
+    TodoFiltersComponent,
+    TodoFooterComponent,
   ],
   exports: [
     TodoComponent
