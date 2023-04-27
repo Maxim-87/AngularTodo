@@ -1,16 +1,19 @@
 <div class="app">
-  <nav>
-    <a class="button"
-       routerLink="/login"
-       routerLinkActive="activebutton">
-      Login
-    </a>
-    <a class="button"
-       routerLink="/"
-       routerLinkActive="activeButton"
-       [routerLinkActiveOptions]="{exact: true}"
-    >Todos</a>
-  </nav>
+  <div class="header">
+    <nav>
+      <a class="button"
+         routerLink="/login"
+         routerLinkActive="activeButton">
+        Login
+      </a>
+      <a class="button"
+         routerLink="/"
+         routerLinkActive="activeButton"
+         [routerLinkActiveOptions]="{exact: true}"
+      >Todos</a>
+    </nav>
+    <button (click)="logoutHandler()" class="logoutButton"> logout </button>
+  </div>
   <tl-notification> </tl-notification>
   <router-outlet></router-outlet>
 </div>

@@ -1,8 +1,17 @@
 .app {
   background: linear-gradient(#117d2c, #7c68a1, #5d26c9);
+  min-block-size: 100vh;
+  max-inline-size: 100vw;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
 }
 
 .button {
+  margin-right: 10px;
   box-shadow: inset 0 1px 0 0 #ffffff;
   background: #ffffff linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
   border-radius: 6px;
@@ -18,6 +27,7 @@
   text-shadow: 0 1px 0 #ffffff;
   outline: 0;
 }
+
 .activeButton {
   box-shadow: inset 0 1px 0 0 #dcecfb;
   background: #bddbfa linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
@@ -25,3 +35,11 @@
   color: #ffffff;
   text-shadow: 0 1px 0 #528ecc;
 }
+
+.logoutButton {
+  border-radius: 4px;
+  background-color: #80b5ea;
+  cursor: pointer;
+}
+
+
